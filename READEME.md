@@ -19,8 +19,8 @@ Um componente de card de visita responsivo com estética **Luxury/Dark**, focado
 
 ## 🧑‍💻 Autor
 Desenvolvido por **Rodrigo Dias**.
-- [LinkedIn]([https://www.linkedin.com/in/rodrigo-dias-a136a7408/])
-- [Portfólio](SEU_LINK_AQUI)
+*   [LinkedIn](https://www.linkedin.com/in/rodrigo-dias-a136a7408/)
+*   [Portfólio](https://rodrigo-dias-dev.github.io/premium-business-card/)
 
 ---
 *Projeto realizado para estudo de estilização CSS e Responsividade.*
