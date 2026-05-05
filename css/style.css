@@ -1,0 +1,166 @@
+@charset "UTF-8";
+
+/* =========================================
+   1. DESIGN SYSTEM (Variáveis Globais)
+========================================= */
+:root {
+    --fonte-principal: 'Playfair Display SC', serif;
+    --fonte-secundaria: 'Cinzel', serif;
+    --fundo-base: #050505;
+    --glass-fundo: rgba(18, 18, 20, 0.7);
+    --dourado-claro: #F5D76E;
+    --dourado-fechado: #D4AF37;
+    --neon-glow: rgba(212, 175, 55, 0.3);
+    --texto-secundario: #CFCFCF;
+}
+
+/* =========================================
+   2. RESET
+========================================= */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--fundo-base);
+    font-family: var(--fonte-principal);
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* 1. MESH GRADIENT (Profundidade no fundo) */
+.mesh-gradient {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 10% 10%, rgba(18, 18, 20, 1) 0%, transparent 40%);
+    z-index: -1;
+}
+
+.layout-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* 2. GLASSMORPHISM NO CARD */
+.card {
+    background: var(--glass-fundo);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 3px solid rgba(212, 175, 55, 0.3);
+    border-radius: 20px;
+    padding: 2.5rem 1.5rem;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s ease;
+}
+
+.card:hover { transform: translateY(-10px); }
+
+/* 3. SHIMMER EFFECT (Animação de brilho) */
+.shimmer {
+    background: linear-gradient(90deg, #D4AF37, #F5D76E, #D4AF37);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 4s linear infinite;
+}
+
+@keyframes shimmer {
+    to { background-position: 200% center; }
+}
+
+.card-title {
+    font-size: clamp(1.6rem, 8vw, 2.2rem);
+    margin: 1rem 0;
+}
+
+.card-description {
+    font-family: var(--fonte-secundaria);
+    font-size: 0.95rem;
+    color: var(--texto-secundario);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+/* Linhas com gradiente */
+.card-crown, .card-icon {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+/* 1. Alinhamento e Espaçamento (O segredo do espaço vazio está no "gap") */
+.card-crown, .card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Desgruda a linha do ícone igual na sua imagem de referência */
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* 2. Tamanho Fixo das Linhas (Garante que sejam menores que o texto) */
+.card-crown::before, .card-crown::after,
+.card-icon::before, .card-icon::after {
+    content: "";
+    display: block;
+    width: 45px; /* Tamanho exato e estático. Não vai mais crescer para os lados */
+    height: 1.5px;
+}
+
+/* 3. Efeito de Gradiente (Afinando para fora) */
+.card-crown::before, .card-icon::before {
+    background: linear-gradient(to left, var(--dourado-fechado), transparent);
+}
+
+.card-crown::after, .card-icon::after {
+    background: linear-gradient(to right, var(--dourado-fechado), transparent);
+}
+
+/* 4. Tamanhos Proporcionais dos Ícones */
+.card-crown svg {
+    width: 32px; /* Reduzido para ficar delicado como na referência */
+    flex-shrink: 0;
+}
+
+.card-icon svg {
+    width: 20px; /* Diamante bem sutil */
+    flex-shrink: 0;
+}
+/* Botão Premium */
+.card-button {
+    text-decoration: none;
+    color: var(--dourado-claro);
+    padding: 12px 35px;
+    border: 2px solid var(--dourado-fechado);
+    border-radius: 50px;
+    font-family: var(--fonte-secundaria);
+    font-weight: 700;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.card-button:hover {
+    background: var(--dourado-fechado);
+    color: #000;
+    box-shadow: 0 0 20px var(--neon-glow);
+}
+
+.rodape {
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
