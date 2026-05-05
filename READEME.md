@@ -19,7 +19,7 @@ Um componente de card de visita responsivo com estética **Luxury/Dark**, focado
 
 ## 🧑‍💻 Autor
 Desenvolvido por **Rodrigo Dias**.
-- [LinkedIn]([SEU_LINK_AQUI](https://www.linkedin.com/in/rodrigo-dias-a136a7408/))
+- [LinkedIn]([https://www.linkedin.com/in/rodrigo-dias-a136a7408/])
 - [Portfólio](SEU_LINK_AQUI)
 
 ---
