@@ -15,7 +15,7 @@ Um componente de card de visita responsivo com estética **Luxury/Dark**, focado
 - Google Fonts (Playfair Display SC & Cinzel)
 
 ## 📸 Preview
-![Preview do Card de Luxo](midia/image_2bcd03.png)
+![Preview do Card de Luxo](midia/car_de_luxo.png)
 
 ## 🧑‍💻 Autor
 Desenvolvido por **Rodrigo Dias**.
